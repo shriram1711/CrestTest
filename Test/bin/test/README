@@ -1,0 +1,14 @@
+1. There are 4 default variables.
+	a. folderPath - This is Directory Path from where We have to write into files. It supports nested structure also.
+	b. logFilePath - This is the file Path in which We have to log our results.
+	c. initialDelayOfTask - This is time after which execution will be started.
+	d. periodicDelayOfTask - This is interval for every write/read operation.
+	
+2. Used ScheduledExecutorService to maintain Scheduling for Tasks.
+3. Created one method for Writing into Files.
+4. Created one method for Reading from Files and Writing into Log file.
+5. For File processing used common methods for read/write.
+6. To only count word "CDS" used Pattern and mapped into Collection.
+
+
+Let me know if any concerns.
