@@ -27,7 +27,12 @@ public class TextFileWriting implements Runnable {
 
 	private final static int periodicDelayOfTask = 2;
 
+	static DistributedRandomWordGenerator drng = null;
+
 	public static void main(String[] args) {
+
+		drng = new DistributedRandomWordGenerator();
+		drng.addWord("CDS", 0.5d);
 
 		ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
@@ -38,6 +43,7 @@ public class TextFileWriting implements Runnable {
 
 	public void run() {
 		final File folder = new File(folderPath);
+		drng.addWord(generateRandomWord(3), 0.5d);
 		writeIntoFilesInSpecifiedFolder(folder);
 		readFromTheFiles(folder);
 	}
@@ -51,7 +57,8 @@ public class TextFileWriting implements Runnable {
 			fw = new FileWriter(file, true);
 			bw = new BufferedWriter(fw);
 			pw = new PrintWriter(bw);
-			pw.println(generateRandomWord(3));
+			System.out.println(drng.getDistributedRandomWord());
+			pw.println(drng.getDistributedRandomWord());
 			pw.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
