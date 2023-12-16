@@ -1,0 +1,7 @@
+com\test\Chat\controller\UserController.class
+com\test\Chat\ChatApplication.class
+com\test\Chat\repository\UserRepository.class
+com\test\Chat\model\LoginRequest.class
+com\test\Chat\service\UserService.class
+com\test\Chat\controller\ChatController.class
+com\test\Chat\model\User.class
